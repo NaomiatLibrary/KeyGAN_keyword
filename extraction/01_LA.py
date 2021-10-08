@@ -4,7 +4,7 @@ from EvaluateExtraction import EvaluateExtraction
 
 class LinguisticApproach(EvaluateExtraction):
     def __init__(self,opt):
-        super(LinguisticApproach,self).__init__(opt,"LA")
+        super(LinguisticApproach,self).__init__(opt,"LinguisticApproach")
     def extract_keyword(self):
         test_file=open(self.opt.test_file_pass,"r")
         nltk.download('punkt')

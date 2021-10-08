@@ -41,9 +41,29 @@ KeyGAN_keyword
 ```
 
 ## usage
+### make dataset and see statistics
+```
+cd dataset
+python scraper.py
+python separatetestdata.py
+python dataset_statistics.py
+```
+### keyword extraction
 ```
 python -m spacy download en_core_web_sm #for TEXTRANK
+python extraction/01_LA.py
+python extraction/02_TFIDF.py
+python extraction/03_RAKE.py
+python extraction/04_TEXTRANK.py
+python extraction/05_YAKE.py
+python extraction/06_GP.py
 ```
+#### plot results
+copy the bottom line from stdout to `extraction/results.csv`, then
+```
+bash extraction/plot.sh
+```
+you can see plot from `extraction/results.png`
 
 ## results
 ### extraction
