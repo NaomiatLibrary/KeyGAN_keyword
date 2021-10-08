@@ -6,7 +6,20 @@ Genetic Programming for keyword abstraction
 
 prese run `dataset/scraper.py` and scrape by youself from these sites:
 http://lifehacker.com/
-http://www.techcrunch.com
+https://gizmodo.com/
+
+### statistics
+#### lifehacker
+```
+#sentences in ./dataset/lifehacker
+mean length:    9.441084788029926
+max length:     19 (i'm melinda wenner moyer, author of 'how to raise kids who aren't assholes', and this is how i work)
+min length:     2 (rip moviepass)
+#keywords in ./dataset/lifehacker
+mean    1.5635910224438903
+max:    7
+min:    1
+```
 
 ## files
 ```

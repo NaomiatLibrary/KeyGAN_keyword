@@ -17,14 +17,14 @@ class Scrape:
                 soup=BeautifulSoup(res.text,"html.parser")
                 for atag in soup.find_all("a"):
                     link = atag.get("href")
-                    if link and self.root in link:
+                    if link and link.startswith(self.root):
                         scraped_urls.append(link)
                 if not soup.find("title"):
                     continue
                 page_title=soup.find("title").text.lower().strip()
                 if not soup.find('meta',attrs={'name': 'keywords'}):
                     continue
-                all_keywords=list(set([key.strip().lower() for key in soup.find('meta',attrs={'name': 'keywords'}).get('content').split(',') if key.strip().lower() in ['lifehacker','techcrunch']]))
+                all_keywords=list(set([key.strip().lower() for key in soup.find('meta',attrs={'name': 'keywords'}).get('content').split(',') if key.strip().lower() not in ['lifehacker','gizmodo']]))
                 extracted_keywords=[keyword for keyword in all_keywords if keyword in page_title]
                 print("TITLE:\t\t\t"+page_title)
                 print("ALL KEYWORDS:\t\t"+','.join(all_keywords))
@@ -46,6 +46,6 @@ class Scrape:
 
 scrape=Scrape("lifehacker",'https://lifehacker.com/')
 scrape.run(['https://lifehacker.com/'])
-#scrape=Scrape("techcrunch",'https://techcrunch.com')
-#scrape.run(['http://www.techcrunch.com'])
+scrape=Scrape("gizmodo",'https://gizmodo.com/')
+scrape.run(['https://gizmodo.com/'])
 
