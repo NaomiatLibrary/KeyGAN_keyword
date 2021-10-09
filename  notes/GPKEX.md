@@ -47,4 +47,5 @@ crossoverのために選ばれた木について、ランダムに選ばれた�
 populationは500、generationは50で実験を行った。
 
 ## Evaluation
-
+クロアチア語のニュースのデータセットを用いた。
+keyphrase candidateとしてN, AN, NN, NSN, V, U (N – noun, A – adjective, S– preposition, V – verb, U – unknown).のみを用いた。training setに存在する全てのキーフレーズのパターンをカバーするには（おそらく品詞のパターンのことを指している）200以上のパターンが必要となるが、キーフレーズの70%を占める6つのパターンのみを候補として用いることとした（候補数は80%削減できた。）また、3語以下のキーフレーズのみを抽出することでキーフレーズの93%をカバーすることができた。
