@@ -32,3 +32,9 @@ class Statistics:
 
 stat=Statistics("lifehacker")
 stat.printstat()
+stat=Statistics("lifehacker_all")
+stat.printstat()
+stat=Statistics("gizmodo")
+stat.printstat()
+stat=Statistics("gizmodo_all")
+stat.printstat()

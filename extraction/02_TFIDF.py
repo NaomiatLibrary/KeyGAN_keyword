@@ -10,7 +10,7 @@ class TFIDF(EvaluateExtraction):
         train_sentences=[lines.strip() for lines in train_file.readlines()]
         test_sentences=[lines.strip() for lines in test_file.readlines()]
         answers=[]
-        cv=CountVectorizer()
+        cv=CountVectorizer(ngram_range=(1,3))
         word_count_vector=cv.fit_transform(train_sentences)
         tfidf_transformer=TfidfTransformer(smooth_idf=True,use_idf=True)
         tfidf_transformer.fit(word_count_vector)
@@ -18,8 +18,8 @@ class TFIDF(EvaluateExtraction):
         for sentence in test_sentences:
             tf_idf_vector=tfidf_transformer.transform(cv.transform([sentence]))
             sorted_items=self.sort_coo(tf_idf_vector.tocoo())
-            keywords=self.extract_topn_from_vector(feature_names,sorted_items)
-            answers.append(keywords)
+            keyphrases=self.extract_topn_from_vector(feature_names,sorted_items)
+            answers.append(keyphrases)
         return answers
     def sort_coo(self,coo_matrix):
         tuples=zip(coo_matrix.col, coo_matrix.data)

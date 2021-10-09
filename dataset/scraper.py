@@ -46,6 +46,6 @@ class Scrape:
 
 scrape=Scrape("lifehacker",'https://lifehacker.com/')
 scrape.run(['https://lifehacker.com/'])
-#scrape=Scrape("gizmodo",'https://gizmodo.com/')
-#scrape.run(['https://gizmodo.com/'])
+scrape=Scrape("gizmodo",'https://gizmodo.com/')
+scrape.run(['https://gizmodo.com/'])
 

@@ -28,3 +28,9 @@ class SeparateData:
 
 sep=SeparateData("lifehacker")
 sep.run(5000)
+sep=SeparateData("gizmodo")
+sep.run(5000)
+sep=SeparateData("lifehacker_all")
+sep.run(5000)
+sep=SeparateData("gizmodo_all")
+sep.run(5000)

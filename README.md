@@ -29,9 +29,13 @@ KeyGAN_keyword
 
 ## usage
 ### make dataset and see statistics
+download from [here](https://drive.google.com/drive/folders/1GMX2mHTRldPm7gcpYO4V7XXySuEn7dQO?usp=sharing)
+or
 ```
 cd dataset
-python scraper.py
+python scraper.py #scraping
+python sentence_tokenizer.py #tokenize text
+python keyword_modifier.py #for extracted keyword data
 python separatetestdata.py
 python dataset_statistics.py
 ```
