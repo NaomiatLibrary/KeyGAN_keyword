@@ -21,11 +21,12 @@ class Statistics:
         test_key_word_count =  [len(keys)for keys in test_keywords]
         train_test_key_word_count = train_key_word_count+test_key_word_count
         print("#sentences in {}".format(self.filename))
+        print("number of sentences:\t{}(test data:\t{})".format(len(train_test_lines_word_count),len(test_lines)))
         print("mean length:\t{}".format(mean(train_test_lines_word_count)))
         print("max length:\t{} ({})".format(max(train_test_lines_word_count),train_test_lines[np.argmax(train_test_lines_word_count)]))
         print("min length:\t{} ({})".format(min(train_test_lines_word_count),train_test_lines[np.argmin(train_test_lines_word_count)]))
         print("#keywords in {}".format(self.filename))
-        print("mean\t{}".format(mean(train_test_key_word_count)))
+        print("mean:\t{}".format(mean(train_test_key_word_count)))
         print("max:\t{}".format(max(train_test_key_word_count)))
         print("min:\t{}".format(min(train_test_key_word_count)))
 

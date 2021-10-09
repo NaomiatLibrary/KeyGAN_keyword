@@ -8,19 +8,6 @@ prese run `dataset/scraper.py` and scrape by youself from these sites:
 http://lifehacker.com/
 https://gizmodo.com/
 
-### statistics
-#### lifehacker
-```
-#sentences in ./dataset/lifehacker
-mean length:    9.441084788029926
-max length:     19 (i'm melinda wenner moyer, author of 'how to raise kids who aren't assholes', and this is how i work)
-min length:     2 (rip moviepass)
-#keywords in ./dataset/lifehacker
-mean    1.5635910224438903
-max:    7
-min:    1
-```
-
 ## files
 ```
 KeyGAN_keyword
@@ -59,12 +46,65 @@ python extraction/05_YAKE.py
 python extraction/06_GP.py
 ```
 #### plot results
-copy the bottom line from stdout to `extraction/results.csv`, then
+copy the bottom line from stdout to `extraction/results_(datasetname).csv`, then
 ```
-bash extraction/plot.sh
+bash extraction/plot.sh (datasetname)
 ```
-you can see plot from `extraction/results.png`
+you can see plot from `extraction/results_(datasetname).png`
 
 ## results
 ### extraction
-![](./extraction/results.png)
+lifehacker:
+![](./extraction/results_lifehacker.png)
+gizmodo:
+![](./extraction/results_gizmodo.png)
+
+
+## dataset statistics
+### lifehacker
+```
+#sentences in lifehacker
+mean length:	9.084666039510818
+max length:	41 (cyanogenmod, our favorite android rom, has expanded into its own company, cyanogen inc. they'll be launching an app that simplifies the installation process, new features, and aiming to update more devices faster. check out their full blog post for more information.)
+min length:	2 (google reader)
+#keywords in lifehacker
+mean:	1.6884000289456544
+max:	7
+min:	1
+```
+### lifehacker_all
+```
+#sentences in lifehacker_all
+number of sentences:	19424(test data:	1000)
+mean length:	9.039899093904449
+max length:	41 (a-la-carte mobile carrier ting announced its new etf relief program. if you break a contract to switch to ting, the carrier will reimburse you up to $75 per line (if you can't get out of the fee yourself). read more here.)
+min length:	1 ("persist.")
+#keywords in lifehacker_all
+mean:	7.552975700164745
+max:	95
+min:	1
+```
+### gizmodo
+```
+#sentences in gizmodo
+number of sentences:	25059(test data:	5000)
+mean length:	10.076659084560438
+max length:	55 (motorola's going to show everyone the new moto x on august 1, in new york. or well, actually, it showed us the phone right there on the invite, on the left. may as well give up all pretense of these things being some big surprise. we'll tell you more about the phone from the event.)
+min length:	1 (supergirlifragilisticxenalidocranz)
+#keywords in gizmodo
+mean:	1.979687936469931
+max:	11
+min:	1
+```
+### gizmodo_all
+```
+#sentences in gizmodo_all
+number of sentences:	28517(test data:	5000)
+mean length:	10.06711785952239
+max length:	55 (motorola's going to show everyone the new moto x on august 1, in new york. or well, actually, it showed us the phone right there on the invite, on the left. may as well give up all pretense of these things being some big surprise. we'll tell you more about the phone from the event.)
+min length:	1 (meebo)
+#keywords in gizmodo_all
+mean:	9.05494967913876
+max:	283
+min:	1
+```

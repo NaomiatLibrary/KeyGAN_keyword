@@ -27,4 +27,4 @@ class SeparateData:
 
 
 sep=SeparateData("lifehacker")
-sep.run(1000)
+sep.run(5000)
