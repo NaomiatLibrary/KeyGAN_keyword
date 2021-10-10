@@ -3,6 +3,8 @@ This article is only in Japanese.
 ## 引用
 Marko Bekavac and Jan Snajder. Gpkex: Genetically programmed keyphrase extraction from croatian texts.
 In Proceedings of the 4th Biennial International Workshop on Balto-Slavic Natural Language Processing, pp. 43–47, 2013.
+
+[implementation](https://github.com/TakeLab/gpkex)
 ## 和訳
 ### 概要
 おそらく、GPをkeyphrase extractionに適用した ~~最初の~~ (本人談。実際には一応後述する論文があった（ちょっとずれてるけど）)、そして数少ない論文である。
@@ -42,10 +44,25 @@ GPでは、overfittingしないようにparsimony pressureというものがよ�
 さらに、木の深さは最大17までとした（一般的に用いられている値らしい）
 #### Crossover and mutation
 crossoverのために選ばれた木について、ランダムに選ばれたノードをrootとするsubtreeを交換する（両方の親の部分木を持つ子孫が選ばれる）。elite strategyを採用してbest-fitted individualを次の世代に残す。
-また、mutationとして、ランダムに選ばれたノードから生えている部分木をランダムに成長させた。5%の確率で書く木が突然変異し、inner nodeは10%の確率で突然変異する。
+また、mutationとして、ランダムに選ばれたノードから生えている部分木をランダムに成長させた。5%の確率で各KSM木が突然変異し、inner nodeは10%の確率で突然変異する。
 
 populationは500、generationは50で実験を行った。
 
 ## Evaluation
+### Dataset and Preprocessing
 クロアチア語のニュースのデータセットを用いた。
 keyphrase candidateとしてN, AN, NN, NSN, V, U (N – noun, A – adjective, S– preposition, V – verb, U – unknown).のみを用いた。training setに存在する全てのキーフレーズのパターンをカバーするには（おそらく品詞のパターンのことを指している）200以上のパターンが必要となるが、キーフレーズの70%を占める6つのパターンのみを候補として用いることとした（候補数は80%削減できた。）また、3語以下のキーフレーズのみを抽出することでキーフレーズの93%をカバーすることができた。
+### Evaluation methodology
+rank-based evaluation measureを採用した。提案手法がranked list of keyphrasesを生み出すので、それをgold-standard keyphrase ranking(annotatorsの判断を集約して作った、あるkeyphraseをkeyphraseとして選んだannotatorが多ければ多いほどランクが高くなる)と比べる。単語の形態的変異は考慮するがpartial matchは考慮しない。
+
+ranked list of extracted keyphrasesを評価するにはgeneralized average precision(GAP)を用いた。precision(全ての正しいkeyphraseが間違ったkeyphraseより前にrankedされていること)とquality of ranking(より関連のあるkeyphraseが他のkeyphraseより前にrankedされていること)の両方を考慮する。また、rank-based IR measures(Precision and Recall at Rank 10)も採用。
+
+注:Precision@kとは…検索結果のk番目まで見た時のprecision。[参考](https://www.szdrblog.info/entry/2018/12/06/010959)
+
+GPのrandomnessを考慮して、30runsの平均を算出。unpaired t-test(対応のないt検定)でtf-idfによるextractionに比べて優位性を確認する。
+
+### test configurations
+parsimony pressureがないA、α=1000のB、α=100のC、そしてAと同じだが全てのPOS patternをkeyphraseとして用いたD
+
+## results
+ABCD全てでbaseline(tf-idf)を上回った。DはABCにoutperformedされたのでPOSタグの限定はbeneficialだった。persimony pressureはP@10とR@10においては効果がなかった（が、木が単純化される効果はあった。）
