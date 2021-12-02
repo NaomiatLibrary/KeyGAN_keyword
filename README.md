@@ -49,7 +49,6 @@ python extraction/02_TFIDF.py
 python extraction/03_RAKE.py
 python extraction/04_TEXTRANK.py
 python extraction/05_YAKE.py
-python extraction/06_GP.py
 ```
 #### plot results
 copy the bottom line from stdout to `extraction/results_(datasetname).csv`, then
