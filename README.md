@@ -1,5 +1,7 @@
 # GP_keyword
-Genetic Programming for keyword abstraction
+methods for keyword abstraction
+Genetic programming is here : https://github.com/NaomiatLibrary/gpkex-english
+
 
 ## dataset
 `dataset/*.txt` is a collection of sentences, and `dataset/*_keywords.txt` is the collection of keywords.
@@ -20,7 +22,6 @@ KeyGAN_keyword
 │   ├03_RAKE...keyword extraction by RAKE
 │   ├04_TEXTRANK...keyword extraction by TextRank
 │   ├05_YAKE...keyword extraction by YAKE
-│   ├06_GP...keyword extraction by Genetic Programming
 │   ├EvaluateExtraction.py...evaluation of keyword extraction
 │   └config.py...config for extraction
 ├.gitignore
@@ -37,6 +38,7 @@ python scraper.py #scraping
 python sentence_tokenizer.py #tokenize text
 python keyword_modifier.py #for extracted keyword data
 python separatetestdata.py
+python makeeachfile.py #for gpkex
 python dataset_statistics.py
 ```
 ### keyword extraction
