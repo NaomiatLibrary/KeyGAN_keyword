@@ -6,12 +6,11 @@ class LinguisticApproach(EvaluateExtraction):
     def __init__(self,opt):
         super(LinguisticApproach,self).__init__(opt,"LinguisticApproach")
     def extract_keyword(self):
-        test_file=open(self.opt.test_file_pass,"r")
+        self.read_files()
         nltk.download('punkt')
         nltk.download('averaged_perceptron_tagger')
-        sentences=test_file.readlines()
         answers=[]
-        for sentence in sentences:
+        for sentence in self.test_sentences:
             text = nltk.word_tokenize(sentence)
             text_tagged=nltk.pos_tag(text)
             keyword_list=[]

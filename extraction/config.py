@@ -6,11 +6,14 @@
 # @Description  :
 # Copyrights (C) 2021. All Rights Reserved.
 
-dataset="./dataset/lifehacker"
-train_file_pass=dataset+".txt"
-train_key_file_pass=dataset+"_keywords.txt"
-test_file_pass=dataset+"_test.txt"
-test_key_file_pass=dataset+"_test_keywords.txt"
+import os
+
+dataset=os.getcwd()+"/dataset/lifehacker"
+train_file_pass=dataset+"_train_text/"
+train_key_file_pass=dataset+"_train_keywords/"
+test_file_pass=dataset+"_test_text/"
+test_key_file_pass=dataset+"_test_keywords/"
+is_already_tokenized=True
 
 max_key_len=5
 

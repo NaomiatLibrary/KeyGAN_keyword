@@ -6,12 +6,11 @@ class TEXTRANK(EvaluateExtraction):
     def __init__(self,opt):
         super(TEXTRANK,self).__init__(opt,"TEXTRANK")
     def extract_keyword(self):
-        test_file=open(self.opt.test_file_pass,"r")
-        sentences=[lines.strip() for lines in test_file.readlines()]
+        self.read_files()
         answers=[]
         nlp=spacy.load("en_core_web_sm")
         nlp.add_pipe("textrank")
-        for sentence in sentences:
+        for sentence in self.test_sentences:
             doc=nlp(sentence)
             answer=[]
             for phrase in doc._.phrases:

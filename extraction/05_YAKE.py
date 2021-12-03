@@ -5,11 +5,10 @@ class YAKE(EvaluateExtraction):
     def __init__(self,opt):
         super(YAKE,self).__init__(opt,"YAKE")
     def extract_keyword(self):
-        test_file=open(self.opt.test_file_pass,"r")
-        sentences=[lines.strip() for lines in test_file.readlines()]
+        self.read_files()
         answers=[]
         kw_extractor=yake.KeywordExtractor()
-        for sentence in sentences:
+        for sentence in self.test_sentences:
             keywords=kw_extractor.extract_keywords(sentence)
             answers.append([key for key,score in keywords])
         return answers

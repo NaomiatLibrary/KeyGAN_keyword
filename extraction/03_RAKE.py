@@ -6,12 +6,11 @@ class RAKE(EvaluateExtraction):
     def __init__(self,opt):
         super(RAKE,self).__init__(opt,"RAKE")
     def extract_keyword(self):
-        test_file=open(self.opt.test_file_pass,"r")
-        sentences=[lines.strip() for lines in test_file.readlines()]
+        self.read_files()
         answers=[]
         nltk.download('stopwords')
         r=Rake()
-        for sentence in sentences:
+        for sentence in self.test_sentences:
             r.extract_keywords_from_text(sentence)
             keyphrases=r.get_ranked_phrases()
             answers.append(keyphrases)
