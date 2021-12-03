@@ -8,12 +8,11 @@
 
 import os
 
-dataset=os.getcwd()+"/dataset/lifehacker"
+dataset=os.getcwd()+"/dataset/semeval"
 train_file_pass=dataset+"_train_text/"
 train_key_file_pass=dataset+"_train_keywords/"
 test_file_pass=dataset+"_test_text/"
 test_key_file_pass=dataset+"_test_keywords/"
-is_already_tokenized=True
-
+is_already_tokenized=False
 max_key_len=5
 
