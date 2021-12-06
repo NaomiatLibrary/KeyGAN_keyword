@@ -63,8 +63,8 @@ lifehacker:
 ![](./extraction/results_lifehacker.png)
 gizmodo:
 ![](./extraction/results_gizmodo.png)
-
-
+semeval:
+![](./extraction/results_semeval.png)
 ## dataset statistics
 ### lifehacker
 ```
