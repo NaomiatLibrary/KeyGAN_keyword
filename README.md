@@ -65,6 +65,9 @@ gizmodo:
 ![](./extraction/results_gizmodo.png)
 semeval:
 ![](./extraction/results_semeval.png)
+### visualization of trees
+red is lifehacker, blue is semeval
+![](./visualization/out.png)
 ## dataset statistics
 ### lifehacker
 ```

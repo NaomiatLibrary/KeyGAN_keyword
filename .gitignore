@@ -2,3 +2,4 @@ dataset/*.txt
 dataset/*/*.txt
 temp
 **/__pycache__
+*/data/*.txt
