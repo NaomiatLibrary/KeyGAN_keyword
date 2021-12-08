@@ -24,6 +24,11 @@ KeyGAN_keyword
 │   ├05_YAKE...keyword extraction by YAKE
 │   ├EvaluateExtraction.py...evaluation of keyword extraction
 │   └config.py...config for extraction
+├visualization
+│   ├calcTED.py...calculate TreeEditDistance and visualize
+│   ├calcKernel.py...calculate tree Kernel and visualize
+│   ├tree.py...originally from here: http://joedsm.altervista.org/pythontreekernels.htm
+│   └tree_kernels.py...originally from here:http://joedsm.altervista.org/pythontreekernels.htm
 ├.gitignore
 └README.md...this file
 ```
@@ -68,6 +73,7 @@ semeval:
 ### visualization of trees
 red is lifehacker, blue is semeval
 ![](./visualization/out.png)
+![](./visualization/kernel.png)
 ## dataset statistics
 ### lifehacker
 ```
