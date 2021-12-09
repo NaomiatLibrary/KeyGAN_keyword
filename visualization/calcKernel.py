@@ -86,7 +86,7 @@ class cKernel():
         return sum(distances)/len(distances) if len(distances)>0 else 0
     def calc_matrix(self):
         matrix=[]
-        trkn=tk.KernelST(1.0)
+        trkn=tk.KernelPdak(1.0,1.0,1.0)
         for i in range(len(self.trees)):
             matrix.append([])
             for j in range(len(self.trees)):
@@ -101,8 +101,7 @@ class cKernel():
         print(A)
         G = nx.from_numpy_matrix(A)
         pos = nx.spring_layout(G,iterations=5000)#エッジの重さが大きいほど近くなる
-        node_color = ["red" for i in range(10)] + ["blue" for i in range(10)]
-        label = [str(i) for i in range(1,21)]
+        node_color = ["orange" for i in range(10)] + ["red" for i in range(10)] + ["blue" for i in range(10)]
         nx.draw_networkx(G,pos=pos,node_color=node_color,width=0.1)
         plt.axis("off")
         plt.savefig("kernel.png")

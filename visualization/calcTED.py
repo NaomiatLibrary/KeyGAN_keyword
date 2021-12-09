@@ -99,8 +99,7 @@ class TED():
         print(A)
         G = nx.from_numpy_matrix(A)
         pos = nx.spring_layout(G)#エッジの重さが大きいほど近くなる
-        node_color = ["red" for i in range(10)] + ["blue" for i in range(10)]
-        label = [str(i) for i in range(1,21)]
+        node_color = ["orange" for i in range(10)] + ["red" for i in range(10)] + ["blue" for i in range(10)]
         nx.draw_networkx(G,pos=pos,node_color=node_color,width=0.1)
         plt.axis("off")
         plt.savefig("out.png")
