@@ -1,4 +1,5 @@
 dataset/*.txt
+dataset/*.json
 dataset/*/*.txt
 temp
 **/__pycache__
