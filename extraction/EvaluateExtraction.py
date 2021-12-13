@@ -13,8 +13,6 @@ class EvaluateExtraction:
         precision_list=[]
         recall_list=[]
         F1_list=[]
-        print(len(self.test_keywords))
-        print(len(answers))
         for i,true_keywords in enumerate(self.test_keywords):
             #answers[i] matches with true_keywords
             hit=0

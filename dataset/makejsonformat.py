@@ -48,7 +48,7 @@ class MakeJsonformat:
             dic["title"]=""
             dic["abstract"]=self.train_sentences[i]
             dic["keywords"]=";".join(self.train_keywords[i])
-            f.write(json.dumps(dic))
+            f.write(json.dumps(dic)+"\n")
         f.close()
         ## valid
         f=open(self.output_valid_file_pass,"w",encoding="utf8")
@@ -57,7 +57,7 @@ class MakeJsonformat:
             dic["title"]=""
             dic["abstract"]=self.train_sentences[i]
             dic["keywords"]=";".join(self.train_keywords[i])
-            f.write(json.dumps(dic))
+            f.write(json.dumps(dic)+"\n")
         f.close()
         ## test
         f=open(self.output_test_file_pass,"w",encoding="utf8")
@@ -66,7 +66,7 @@ class MakeJsonformat:
             dic["title"]=""
             dic["abstract"]=self.test_sentences[i]
             dic["keywords"]=";".join(self.test_keywords[i])
-            f.write(json.dumps(dic))
+            f.write(json.dumps(dic)+"\n")
         f.close()
 
 mjf=MakeJsonformat(os.getcwd()+"/lifehacker")

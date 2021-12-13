@@ -2,3 +2,10 @@ zss
 pygraphviz
 networkx
 grakel
+bs4
+yake
+spacy
+pytextrank
+nltk
+rake_nltk
+git+https://github.com/boudinfl/pke.git

@@ -18,10 +18,11 @@ KeyGAN_keyword
 │   └separatetestdata.py...python coder for separate dataset
 ├extraction
 │   ├01_LA.py...keyword extraction by linguisitic approach
-│   ├02_TFIDF...keyword extraction by TF-IDF
-│   ├03_RAKE...keyword extraction by RAKE
-│   ├04_TEXTRANK...keyword extraction by TextRank
-│   ├05_YAKE...keyword extraction by YAKE
+│   ├02_TFIDF.py...keyword extraction by TF-IDF
+│   ├03_RAKE.py...keyword extraction by RAKE
+│   ├04_TEXTRANK.py...keyword extraction by TextRank
+│   ├05_YAKE.py...keyword extraction by YAKE
+│   ├06_MultiPartiteRank.py...keyword extraction by MultiPartiteRank
 │   ├EvaluateExtraction.py...evaluation of keyword extraction
 │   └config.py...config for extraction
 ├visualization
@@ -48,12 +49,15 @@ python dataset_statistics.py
 ```
 ### keyword extraction
 ```
+python -m nltk.downloader stopwords
+python -m nltk.downloader universal_tagset #for MultipartiteRank
 python -m spacy download en_core_web_sm #for TEXTRANK
 python extraction/01_LA.py
 python extraction/02_TFIDF.py
 python extraction/03_RAKE.py
 python extraction/04_TEXTRANK.py
 python extraction/05_YAKE.py
+python extraction/06_MultipartiteRank.py
 ```
 #### plot results
 copy the bottom line from stdout to `extraction/results_(datasetname).csv`, then
