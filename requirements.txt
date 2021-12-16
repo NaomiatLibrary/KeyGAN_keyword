@@ -1,4 +1,3 @@
-zss
 pygraphviz
 networkx
 grakel
@@ -8,4 +7,5 @@ spacy
 pytextrank
 nltk
 rake_nltk
+pydot
 git+https://github.com/boudinfl/pke.git

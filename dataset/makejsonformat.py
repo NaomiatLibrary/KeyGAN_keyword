@@ -47,7 +47,7 @@ class MakeJsonformat:
             dic={}
             dic["title"]=""
             dic["abstract"]=self.train_sentences[i]
-            dic["keywords"]=";".join(self.train_keywords[i])
+            dic["keywords"]=self.train_keywords[i]
             f.write(json.dumps(dic)+"\n")
         f.close()
         ## valid

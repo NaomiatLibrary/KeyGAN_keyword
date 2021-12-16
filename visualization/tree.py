@@ -5,7 +5,9 @@ A set of Classes to handle trees and compute kernel functions on them
 
 import random
 import bisect
-
+from functools import cmp_to_key
+def cmp(a, b):
+    return (a > b) - (a < b) 
 class TreeNode:
     #A simple class for handling tree nodes 
     def __init__(self,val=None,chs=[]):
@@ -439,8 +441,8 @@ class ProdSubtreeList():
         return self.prodorderedlist[i][1]
 
     def sort(self):
-        self.prodorderedlist.sort(cmp = lambda x, y: cmp(x[0], y[0]))
-        self.prodorderedlist.sort(cmp = lambda x, y: cmp(len(x[0]), len(y[0])))
+        self.prodorderedlist.sort(key=cmp_to_key(lambda x, y: cmp(x[0], y[0])))
+        self.prodorderedlist.sort(key=cmp_to_key(lambda x, y: cmp(len(x[0]), len(y[0]))))
 
     def __len__(self):
         return len(self.prodorderedlist)

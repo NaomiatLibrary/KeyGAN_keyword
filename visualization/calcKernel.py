@@ -80,13 +80,13 @@ class cKernel():
     def calc_average_dist(self,l,r):
         #最初の10個はlifehacker
         distances=[]
-        trkn=tk.KernelST(10.0) ## l=??
+        trkn=tk.KernelSST(0.4) ## l=??
         for t1,t2 in list(itertools.combinations(self.trees[l:r], 2)):
             trkn.kernel(t1,t2)
         return sum(distances)/len(distances) if len(distances)>0 else 0
     def calc_matrix(self):
         matrix=[]
-        trkn=tk.KernelPdak(1.0,1.0,1.0)
+        trkn=tk.KernelSST(0.4) ## lambda=0.4 was good in paper
         for i in range(len(self.trees)):
             matrix.append([])
             for j in range(len(self.trees)):
