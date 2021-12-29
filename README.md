@@ -44,7 +44,7 @@ python scraper.py #scraping
 python sentence_tokenizer.py #tokenize text
 python keyword_modifier.py #for extracted keyword data
 python separatetestdata.py
-python makeeachfile.py #for gpkex
+python makeeachfile.py
 python dataset_statistics.py
 ```
 ### keyword extraction

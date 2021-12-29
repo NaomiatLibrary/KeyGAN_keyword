@@ -8,7 +8,7 @@
 
 import os
 
-dataset=os.getcwd()+"/dataset/semeval"
+dataset=os.getcwd()+"/dataset/inspec"
 train_file_pass=dataset+"_train_text/"
 train_key_file_pass=dataset+"_train_keywords/"
 test_file_pass=dataset+"_test_text/"
