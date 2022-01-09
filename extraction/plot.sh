@@ -1,6 +1,6 @@
 gnuplot -e '
-set terminal png;
-set output "./extraction/results_'$1'.png";
+set terminal eps;
+set output "./extraction/results_'$1'.eps";
 set datafile separator ",";
 set style fill solid border lc rgb "black";
 set boxwidth 1;

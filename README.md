@@ -69,11 +69,11 @@ you can see plot from `extraction/results_(datasetname).png`
 ## results
 ### extraction
 lifehacker:
-![](./extraction/results_lifehacker.png)
+![](./extraction/results_lifehacker.eps)
 gizmodo:
-![](./extraction/results_gizmodo.png)
+![](./extraction/results_gizmodo.eps)
 semeval:
-![](./extraction/results_semeval.png)
+![](./extraction/results_semeval.eps)
 ### visualization of trees
 red is lifehacker, blue is semeval
 ![](./visualization/out.png)
